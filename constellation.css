@@ -1,0 +1,1072 @@
+/* ======================================================
+                    RESET
+====================================================== */
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    background:#030516;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    SKY
+====================================================== */
+
+
+.sky{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+
+    background:
+
+    radial-gradient(
+
+    circle at top,
+
+    #27346b,
+
+    transparent 40%
+
+    ),
+
+
+    linear-gradient(
+
+    to bottom,
+
+    #020313,
+
+    #080d25,
+
+    #111936
+
+    );
+
+}
+
+
+
+
+
+
+
+
+/* ======================================================
+                    STARS CONTAINER
+====================================================== */
+
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    CLICKABLE STARS
+====================================================== */
+
+
+.star{
+
+    position:absolute;
+
+    font-size:3rem;
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    user-select:none;
+
+
+    filter:
+
+    drop-shadow(0 0 15px white);
+
+
+    animation:
+
+    starPulse 3s infinite ease-in-out;
+
+
+    transition:.4s;
+
+}
+
+
+
+@keyframes starPulse{
+
+
+    0%,100%{
+
+        opacity:.65;
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+
+
+
+
+
+.star:hover{
+
+    transform:scale(1.5);
+
+}
+
+
+
+
+
+
+.star:nth-child(1){
+
+    top:25%;
+
+    left:20%;
+
+}
+
+
+
+.star:nth-child(2){
+
+    top:35%;
+
+    right:25%;
+
+}
+
+
+
+.star:nth-child(3){
+
+    bottom:30%;
+
+    left:35%;
+
+}
+
+
+
+.star:nth-child(4){
+
+    bottom:25%;
+
+    right:18%;
+
+}
+
+
+
+
+
+
+
+@keyframes twinkle{
+
+
+    0%,100%{
+
+        opacity:.5;
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    MAIN CONTENT
+====================================================== */
+
+
+.content{
+
+
+    height:100vh;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    pointer-events:none;
+
+}
+
+
+
+
+
+
+
+.chapter{
+
+
+    letter-spacing:8px;
+
+
+    font-size:.9rem;
+
+
+    color:#b8c0ff;
+
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+
+
+.content h1{
+
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+
+    font-size:5rem;
+
+
+    font-weight:600;
+
+
+    text-shadow:
+
+
+    0 0 20px rgba(200,220,255,.8),
+
+
+    0 0 40px rgba(150,170,255,.5);
+
+}
+
+
+
+
+
+
+
+.quote{
+
+
+    margin-top:25px;
+
+
+    color:#ccd4ff;
+
+
+    font-size:1.2rem;
+
+
+    line-height:2;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    MOON
+====================================================== */
+
+
+.moon{
+
+
+    margin-top:50px;
+
+
+    font-size:7rem;
+
+
+    filter:
+
+
+    drop-shadow(
+
+    0 0 40px rgba(255,255,200,.8)
+
+    );
+
+
+    animation:
+
+    floatMoon 5s infinite ease-in-out;
+
+}
+
+
+
+
+
+
+
+@keyframes floatMoon{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+
+
+
+
+.hint{
+
+
+    margin-top:40px;
+
+
+    color:#b5bde8;
+
+
+    animation:
+
+    hintMove 2s infinite;
+
+}
+
+
+
+
+
+
+@keyframes hintMove{
+
+
+    0%,100%{
+
+        opacity:.5;
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ======================================================
+                MEMORY OVERLAY
+====================================================== */
+
+
+.memory-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    rgba(0,0,20,.75);
+
+
+    backdrop-filter:blur(10px);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    opacity:0;
+
+    visibility:hidden;
+
+
+    transition:.6s ease;
+
+
+    z-index:50;
+
+}
+
+
+
+
+.memory-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                MEMORY CARD
+====================================================== */
+
+
+.memory-card{
+
+
+    width:min(850px,90%);
+
+
+    min-height:450px;
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    #fff8e7,
+
+    #f1dfb8
+
+    );
+
+
+    border-radius:12px;
+
+
+    padding:45px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:50px;
+
+
+    color:#303454;
+
+
+    position:relative;
+
+
+
+    box-shadow:
+
+
+    0 30px 80px rgba(0,0,0,.6);
+
+
+
+    transform:
+
+
+    rotate(-8deg)
+
+    scale(.5);
+
+
+
+    transition:
+
+
+    .8s cubic-bezier(.2,1,.3,1);
+
+}
+
+
+
+
+
+
+
+.memory-overlay.show .memory-card{
+
+
+    transform:
+
+
+    rotate(-2deg)
+
+    scale(1);
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    PHOTO
+====================================================== */
+
+
+#memoryImage{
+
+
+    width:260px;
+
+
+    height:320px;
+
+
+    object-fit:cover;
+
+
+    background:white;
+
+
+    padding:12px;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,0,0,.35);
+
+
+
+    transform:
+
+    rotate(-8deg);
+
+
+
+    transition:.5s ease;
+
+}
+
+
+
+
+#memoryImage:hover{
+
+
+    transform:
+
+    rotate(0deg)
+
+    scale(1.05);
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                MEMORY TEXT
+====================================================== */
+
+
+.memory-info{
+
+
+    flex:1;
+
+}
+
+
+
+
+.memory-info h2{
+
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+
+    font-size:3.5rem;
+
+
+    margin-bottom:25px;
+
+
+    color:#34385f;
+
+}
+
+
+
+
+
+.memory-info p{
+
+
+    font-size:1.1rem;
+
+
+    line-height:2;
+
+
+    color:#596080;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                CLOSE BUTTON
+====================================================== */
+
+
+#close{
+
+
+    position:absolute;
+
+
+    top:20px;
+
+
+    right:25px;
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border:none;
+
+
+    border-radius:50%;
+
+
+    background:#34385f;
+
+
+    color:white;
+
+
+    font-size:1.5rem;
+
+
+    cursor:pointer;
+
+
+    transition:.4s;
+
+}
+
+
+
+
+
+#close:hover{
+
+
+    transform:
+
+    rotate(90deg);
+
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                STAR CLICK EFFECT
+====================================================== */
+
+
+.star.clicked{
+
+
+    color:#ffe9a6;
+
+
+    filter:
+
+    drop-shadow(0 0 40px #ffe9a6);
+
+
+    animation:none;
+
+
+    transform:scale(2);
+
+
+}
+
+
+
+
+
+
+/* ======================================================
+                CONTINUE BUTTON
+====================================================== */
+
+
+.next{
+
+
+    position:fixed;
+
+
+    bottom:40px;
+
+
+    right:40px;
+
+
+
+    padding:15px 35px;
+
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    color:white;
+
+
+    font-size:1rem;
+
+
+    cursor:pointer;
+
+
+
+    backdrop-filter:blur(10px);
+
+
+
+    transition:.4s;
+
+
+
+    z-index:20;
+
+}
+
+
+
+
+
+.next:hover{
+
+
+    transform:translateY(-5px);
+
+
+    background:
+
+    rgba(255,255,255,.3);
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                MOBILE
+====================================================== */
+
+
+@media(max-width:700px){
+
+
+    .memory-card{
+
+
+        flex-direction:column;
+
+
+        padding:30px;
+
+
+        gap:20px;
+
+
+    }
+
+
+
+
+    #memoryImage{
+
+
+        width:220px;
+
+
+        height:270px;
+
+    }
+
+
+
+
+    .memory-info{
+
+
+        text-align:center;
+
+    }
+
+
+
+    .memory-info h2{
+
+
+        font-size:2.5rem;
+
+    }
+
+
+
+    .next{
+
+
+        right:20px;
+
+
+        bottom:20px;
+
+    }
+
+
+}
+
+
+/* ======================================================
+            CONSTELLATION CONNECTION
+====================================================== */
+
+
+.stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:180px;
+
+    top:30%;
+
+    left:28%;
+
+
+    border-top:1px solid rgba(255,255,255,.25);
+
+    border-right:1px solid rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+
+    transform:rotate(-20deg);
+
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+
+.sky::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,.8) 1px,
+
+    transparent 2px
+
+    );
+
+
+    background-size:100px 100px;
+
+
+    opacity:.15;
+
+
+    animation:
+
+    dustMove 30s linear infinite;
+
+
+}
+
+
+
+@keyframes dustMove{
+
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateY(-150px);
+
+    }
+
+}

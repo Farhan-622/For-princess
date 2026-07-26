@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Beginning</title>
+
+    <link rel="stylesheet" href="thebeginning.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="page-transition">
+
+    <div class="transition-flower">
+        🌸
+    </div>
+
+</div>
+    <!-- Background -->
+
+    <div class="background"></div>
+
+    <div class="particles"></div>
+
+    <!-- Book -->
+
+    <section class="book" id="book">
+
+        <div class="book-left">
+
+            <p class="chapter">
+
+                CHAPTER ONE
+
+            </p>
+
+            <h1>
+
+                The Beginning
+
+            </h1>
+
+            <p class="subtitle">
+
+                Every beautiful love story starts with one unforgettable moment.
+
+            </p>
+
+            <div class="bookmark-container">
+
+                <button class="bookmark active"
+
+                    data-memory="meeting">
+
+                    🌸
+
+                    <span>
+
+                        Holding The Presious Petal
+
+                    </span>
+
+                </button>
+
+                <button class="bookmark"
+
+                    data-memory="conversation">
+
+                    ☕
+
+                    <span>
+
+                        Closest To My Heart
+
+                    </span>
+
+                </button>
+
+                <button class="bookmark"
+
+                    data-memory="smile">
+
+                    😊
+
+                    <span>
+
+                        The First Smile
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="book-fold"></div>
+
+        <div class="book-right">
+
+            <div class="hint">
+
+                Click a memory to reveal the hidden letter.
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Hidden Memory Letter -->
+
+    <section class="memory-overlay" id="memoryOverlay">
+
+        <div class="memory-paper">
+
+            <button id="closeLetter">
+
+                ✕
+
+            </button>
+
+            <div class="polaroid">
+
+                <img id="memoryImage"
+
+                    src="meeting.jpg"
+
+                    alt="Memory">
+
+                <p id="memoryCaption">
+
+                    Our First Meeting
+
+                </p>
+
+            </div>
+
+            <div class="letter">
+
+                <h2 id="memoryTitle">
+
+                    The First Time We Met
+
+                </h2>
+
+                <p id="memoryText">
+
+                    Story goes here...
+
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Navigation -->
+
+    <div class="navigation">
+
+        <button id="back">
+
+            ← Previous
+
+        </button>
+
+        <button id="next">
+
+            Continue Our Story →
+
+        </button>
+
+    </div>
+
+    <script src="thebeginning.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,899 @@
+/* ======================================================
+                    RESET
+====================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#fff8f1;
+
+    color:#4b3f39;
+
+    overflow-x:hidden;
+
+}
+
+
+
+
+/* ======================================================
+                    BACKGROUND
+====================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    background:
+
+    radial-gradient(
+
+    circle at top left,
+
+    rgba(255,220,210,.8),
+
+    transparent 35%
+
+    ),
+
+    radial-gradient(
+
+    circle at bottom right,
+
+    rgba(255,235,180,.6),
+
+    transparent 40%
+
+    ),
+
+    linear-gradient(
+
+    to bottom,
+
+    #fff8f1,
+
+    #fff2e5,
+
+    #fce8d7
+
+    );
+
+}
+
+
+
+
+/* ======================================================
+                    PETALS LAYER
+====================================================== */
+
+.petals{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+
+
+
+/* ======================================================
+                    HERO
+====================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+
+.chapter{
+
+    letter-spacing:8px;
+
+    font-size:.9rem;
+
+    color:#b07a63;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:6rem;
+
+    font-weight:600;
+
+    color:#7b4f45;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+.subtitle{
+
+    max-width:700px;
+
+    line-height:2;
+
+    font-size:1.2rem;
+
+    color:#7a665d;
+
+}
+
+
+
+
+/* ======================================================
+                    FLOWER
+====================================================== */
+
+.flower{
+
+    margin-top:55px;
+
+    font-size:6rem;
+
+    animation:
+
+    bloomFloat 4s ease-in-out infinite;
+
+}
+
+
+
+
+@keyframes bloomFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+
+/* ======================================================
+                    SCROLL
+====================================================== */
+
+.scroll-indicator{
+
+    margin-top:50px;
+
+    color:#9a7d6c;
+
+    animation:
+
+    scrollMove 2s infinite;
+
+}
+
+
+
+
+@keyframes scrollMove{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:translateY(12px);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ======================================================
+                    MEMORY GALLERY
+====================================================== */
+
+
+.gallery{
+
+    width:min(1200px,90%);
+
+    margin:120px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:180px;
+
+}
+
+
+
+
+
+/* ======================================================
+                    MEMORY CARD
+====================================================== */
+
+
+.memory{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:80px;
+
+}
+
+
+
+
+
+.memory.reverse{
+
+    flex-direction:row-reverse;
+
+}
+
+
+
+
+
+/* ======================================================
+                    PHOTO
+====================================================== */
+
+
+.photo{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+
+
+.photo img{
+
+    width:100%;
+
+    max-width:430px;
+
+    height:540px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.15);
+
+    transition:
+
+    transform .5s ease,
+
+    box-shadow .5s ease;
+
+}
+
+
+
+
+
+.photo img:hover{
+
+    transform:
+
+    scale(1.03)
+
+    rotate(-2deg);
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.22);
+
+}
+
+
+
+
+
+/* ======================================================
+                    PHOTO FRAME
+====================================================== */
+
+
+.photo{
+
+    position:relative;
+
+}
+
+
+
+.photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    max-width:430px;
+
+    height:540px;
+
+    border:2px solid rgba(210,170,145,.35);
+
+    border-radius:28px;
+
+    transform:
+
+    translate(12px,12px);
+
+    z-index:-1;
+
+}
+
+
+
+
+
+/* ======================================================
+                    TEXT
+====================================================== */
+
+
+.text{
+
+    flex:1;
+
+}
+
+
+
+
+
+.memory-number{
+
+    display:inline-block;
+
+    font-size:4rem;
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#d9b7a1;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.text h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3rem;
+
+    color:#6b4b3f;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.text p{
+
+    font-size:1.08rem;
+
+    line-height:2.1;
+
+    color:#6f6058;
+
+}
+
+
+
+
+
+/* ======================================================
+                    REVEAL
+====================================================== */
+
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+
+    translateY(80px);
+
+    transition:
+
+    opacity 1s ease,
+
+    transform 1s ease;
+
+}
+
+
+
+
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:
+
+    translateY(0);
+
+}
+
+
+/* ======================================================
+                    SOFT GLOW
+====================================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(255,220,200,.25);
+
+    filter:blur(90px);
+
+    z-index:-1;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    FLOWER DECORATIONS
+====================================================== */
+
+.memory::after{
+
+    content:"🌸";
+
+    position:absolute;
+
+    font-size:2rem;
+
+    opacity:.15;
+
+    right:5%;
+
+    top:-20px;
+
+    animation:flowerFloat 5s ease-in-out infinite;
+
+}
+
+
+
+.memory{
+
+    position:relative;
+
+}
+
+
+
+@keyframes flowerFloat{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px) rotate(8deg);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    IMAGE SHINE
+====================================================== */
+
+.photo{
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+}
+
+
+
+.photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-130%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent
+
+    );
+
+    transition:1s;
+
+}
+
+
+
+.photo:hover::after{
+
+    left:150%;
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    NAVIGATION
+====================================================== */
+
+.navigation{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:60px 8%;
+
+}
+
+
+
+.navigation button{
+
+    padding:15px 32px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    background:#d79a84;
+
+    color:white;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 30px rgba(215,154,132,.3);
+
+}
+
+
+
+.navigation button:hover{
+
+    transform:
+
+    translateY(-5px);
+
+
+
+    background:#c9856d;
+
+
+
+    box-shadow:
+
+    0 18px 40px rgba(201,133,109,.35);
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    PAGE APPEAR
+====================================================== */
+
+body{
+
+    animation:pageAppear 1.5s ease;
+
+}
+
+
+
+@keyframes pageAppear{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    FLOATING PETALS
+====================================================== */
+
+.petal{
+
+    position:fixed;
+
+    top:-40px;
+
+    font-size:1.4rem;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+
+    opacity:.8;
+
+}
+
+
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+
+        translateY(-20px)
+
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(110vh)
+
+        rotate(360deg);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ======================================================
+                    MOBILE
+====================================================== */
+
+@media(max-width:900px){
+
+    .memory,
+
+    .memory.reverse{
+
+        flex-direction:column;
+
+        gap:40px;
+
+    }
+
+    .text{
+
+        text-align:center;
+
+    }
+
+    .hero h1{
+
+        font-size:4rem;
+
+    }
+
+    .subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .photo img{
+
+        max-width:100%;
+
+        height:auto;
+
+    }
+
+    .photo::before{
+
+        display:none;
+
+    }
+
+    .memory-number{
+
+        font-size:3rem;
+
+    }
+
+    .text h2{
+
+        font-size:2.4rem;
+
+    }
+
+    .gallery{
+
+        gap:100px;
+
+    }
+
+    .navigation{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:40px 20px;
+
+    }
+
+    .navigation button{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+}

@@ -1,0 +1,1115 @@
+/* ======================================================
+                        FONTS
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ======================================================
+                        RESET
+====================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#2d1b10;
+
+    overflow:hidden;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+/* ======================================================
+                    BACKGROUND
+====================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+
+    rgba(255,220,150,.18),
+
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+
+    rgba(255,180,120,.12),
+
+    transparent 40%),
+
+    linear-gradient(
+
+    135deg,
+
+    #3a2414,
+
+    #5b3820,
+
+    #2a190e
+
+    );
+
+    z-index:-5;
+
+}
+
+/* ======================================================
+                    FLOATING PARTICLES
+====================================================== */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    overflow:hidden;
+
+}
+
+/* ======================================================
+                        BOOK
+====================================================== */
+
+.book{
+
+    width:min(1100px,92%);
+
+    height:700px;
+
+    display:flex;
+
+    position:relative;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 35px 90px rgba(0,0,0,.45);
+
+    transition:
+
+    transform .6s ease,
+
+    filter .6s ease;
+
+}
+
+/* ======================================================
+                    LEFT PAGE
+====================================================== */
+
+.book-left{
+
+    width:50%;
+
+    background:#fbf4e8;
+
+    padding:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+}
+
+/* ======================================================
+                    RIGHT PAGE
+====================================================== */
+
+.book-right{
+
+    width:50%;
+
+    background:#fffaf1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+/* ======================================================
+                    CENTER FOLD
+====================================================== */
+
+.book-fold{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:6px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    to right,
+
+    rgba(0,0,0,.18),
+
+    rgba(255,255,255,.25),
+
+    rgba(0,0,0,.18)
+
+    );
+
+    z-index:20;
+
+}
+
+/* ======================================================
+                    TITLE
+====================================================== */
+
+.chapter{
+
+    letter-spacing:6px;
+
+    font-size:.9rem;
+
+    color:#b58b4b;
+
+    margin-bottom:20px;
+
+}
+
+.book h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4.8rem;
+
+    color:#2d2118;
+
+    margin-bottom:20px;
+
+}
+
+.subtitle{
+
+    color:#685a4d;
+
+    line-height:1.8;
+
+    margin-bottom:60px;
+
+}
+
+/* ======================================================
+                    BOOKMARKS
+====================================================== */
+
+.bookmark-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.bookmark{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:#f3e6d2;
+
+    color:#3b2b20;
+
+    font-size:1rem;
+
+    transition:.35s;
+
+}
+
+.bookmark:hover{
+
+    transform:translateX(12px);
+
+    background:#ead7bb;
+
+}
+
+.bookmark.active{
+
+    background:#c99b4f;
+
+    color:white;
+
+    transform:translateX(18px);
+
+}
+
+.bookmark span{
+
+    font-weight:500;
+
+}
+
+/* ======================================================
+                    RIGHT PAGE TEXT
+====================================================== */
+
+.hint{
+
+    font-size:1.3rem;
+
+    text-align:center;
+
+    color:#86715d;
+
+    max-width:260px;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+}
+
+
+/* ======================================================
+                MEMORY OVERLAY
+====================================================== */
+
+.memory-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:.6s ease;
+
+    z-index:200;
+
+}
+
+.memory-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+/* ======================================================
+                BOOK WHEN OPEN
+====================================================== */
+
+.book.open{
+
+    transform:scale(.82);
+
+    filter:blur(5px) brightness(.55);
+
+}
+
+/* ======================================================
+                MEMORY PAPER
+====================================================== */
+
+.memory-paper{
+
+    position:relative;
+
+    width:min(850px,92%);
+
+    min-height:620px;
+
+    background:#fffdf6;
+
+    border-radius:14px;
+
+    padding:50px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 40px 100px rgba(0,0,0,.45);
+
+    transform:
+
+    translateY(120px)
+
+    scale(.55)
+
+    rotate(-6deg);
+
+    opacity:0;
+
+    transition:
+
+    .8s cubic-bezier(.19,1,.22,1);
+
+}
+
+/* ======================================================
+            PAPER OPEN ANIMATION
+====================================================== */
+
+.memory-overlay.active .memory-paper{
+
+    transform:
+
+    translateY(0)
+
+    scale(1)
+
+    rotate(0deg);
+
+    opacity:1;
+
+}
+
+/* ======================================================
+                PAPER TEXTURE
+====================================================== */
+
+.memory-paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+    0deg,
+
+    rgba(0,0,0,.02),
+
+    rgba(0,0,0,.02) 1px,
+
+    transparent 1px,
+
+    transparent 7px
+
+    );
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+                CLOSE BUTTON
+====================================================== */
+
+#closeLetter{
+
+    position:absolute;
+
+    top:18px;
+
+    right:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    background:#e6d4ba;
+
+    transition:.3s;
+
+}
+
+#closeLetter:hover{
+
+    transform:rotate(90deg);
+
+    background:#c99b4f;
+
+    color:white;
+
+}
+
+/* ======================================================
+                POLAROID
+====================================================== */
+
+.polaroid{
+
+    width:270px;
+
+    background:white;
+
+    padding:15px;
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+    box-shadow:
+
+    0 18px 40px rgba(0,0,0,.18);
+
+    transform:
+
+    rotate(-4deg);
+
+    transition:.5s;
+
+}
+
+.memory-overlay.active .polaroid{
+
+    transform:
+
+    rotate(0deg);
+
+}
+
+.polaroid img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.polaroid p{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:1.3rem;
+
+    color:#463729;
+
+}
+
+/* ======================================================
+                    LETTER
+====================================================== */
+
+.letter{
+
+    text-align:center;
+
+}
+
+.letter h2{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:3rem;
+
+    color:#2f2319;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    color:#5b4b3d;
+
+}
+
+/* ======================================================
+            SHADOW UNDER PAPER
+====================================================== */
+
+.memory-paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70%;
+
+    height:40px;
+
+    background:
+
+    rgba(0,0,0,.25);
+
+    filter:blur(30px);
+
+    border-radius:50%;
+
+}
+
+/* ======================================================
+                NAVIGATION
+====================================================== */
+
+.navigation{
+
+    position:fixed;
+
+    bottom:35px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:0 60px;
+
+}
+
+.navigation button{
+
+    padding:16px 34px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:40px;
+
+    background:#c99b4f;
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:.35s;
+
+}
+
+.navigation button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 12px 25px
+
+    rgba(201,155,79,.35);
+
+}
+
+
+/* ======================================================
+                    SPINE GLOW
+====================================================== */
+
+.book::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:12px;
+
+    height:100%;
+
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255,230,170,.55),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.6s ease;
+
+    pointer-events:none;
+
+}
+
+.book.open::after{
+
+    opacity:1;
+
+}
+
+/* ======================================================
+                PAPER FLOATING
+====================================================== */
+
+.memory-paper{
+
+    animation:paperFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes paperFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ======================================================
+                BOOKMARK SHINE
+====================================================== */
+
+.bookmark{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.bookmark::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.bookmark:hover::before{
+
+    left:150%;
+
+}
+
+/* ======================================================
+                    LETTER FADE
+====================================================== */
+
+.polaroid,
+.letter{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:.8s ease;
+
+}
+
+.memory-overlay.active .polaroid{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:.3s;
+
+}
+
+.memory-overlay.active .letter{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:.5s;
+
+}
+
+/* ======================================================
+                    IMAGE EFFECT
+====================================================== */
+
+.polaroid img{
+
+    transition:.5s ease;
+
+}
+
+.polaroid:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ======================================================
+                CUSTOM SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eadbc5;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c99b4f;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#b58538;
+
+}
+
+/* ======================================================
+                RESPONSIVE
+====================================================== */
+
+@media(max-width:1000px){
+
+.book{
+
+    flex-direction:column;
+
+    height:auto;
+
+}
+
+.book-left,
+.book-right{
+
+    width:100%;
+
+}
+
+.book-fold{
+
+    display:none;
+
+}
+
+.navigation{
+
+    padding:0 20px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.book{
+
+    width:95%;
+
+}
+
+.book-left{
+
+    padding:35px;
+
+}
+
+.book h1{
+
+    font-size:3rem;
+
+}
+
+.subtitle{
+
+    margin-bottom:35px;
+
+}
+
+.bookmark{
+
+    font-size:.95rem;
+
+    padding:16px;
+
+}
+
+.memory-paper{
+
+    padding:30px 22px;
+
+}
+
+.polaroid{
+
+    width:220px;
+
+}
+
+.polaroid img{
+
+    height:240px;
+
+}
+
+.letter h2{
+
+    font-size:2.2rem;
+
+}
+
+.letter p{
+
+    font-size:1rem;
+
+}
+
+.navigation{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    bottom:20px;
+
+}
+
+.navigation button{
+
+    width:100%;
+
+}
+
+}
+
+
+/* ===============================
+        PAGE EXIT TRANSITION
+================================ */
+
+
+.page-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    #f7d6a8,
+
+    #f9ebca,
+
+    #dce8c5
+
+    );
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    transform:translateY(-100%);
+
+}
+
+
+
+.transition-flower{
+
+    font-size:5rem;
+
+    animation:
+
+    flowerPulse 1.5s infinite;
+
+}
+
+
+
+@keyframes flowerPulse{
+
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+
+}
+
+
+
+/* When leaving */
+
+.page-transition.leave{
+
+    animation:
+
+    closePage 1.3s ease forwards;
+
+}
+
+
+
+@keyframes closePage{
+
+
+    from{
+
+        transform:translateY(-100%);
+
+    }
+
+
+    to{
+
+        transform:translateY(0);
+
+    }
+
+
+}
