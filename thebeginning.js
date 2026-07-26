@@ -32,7 +32,7 @@ const memories = {
 
         image: "Photo 2.jpeg",
 
-        caption: "The First Smile",
+        caption: "Your Astonishing Smile",
 
         title: "The Smile I Never Forgot",
 
