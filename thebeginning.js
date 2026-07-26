@@ -36,7 +36,7 @@ const memories = {
 
         title: "The Smile I Never Forgot",
 
-        text: "The first time you smiled at me, time seemed to slow down. It was one of those rare moments that didn't need grand words or gestures. That smile was enough to make my heart quietly choose you."
+        text: "Whenever you smiled at me, time seemed to slow down. It was one of those rare moments that didn't need grand words or gestures. That smile was enough to make my heart quietly choose you."
 
     }
 
